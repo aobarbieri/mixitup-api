@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Mix It Up - Drink Details
+{% endblock %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static "cocktails/drink-details.css" %}" />
+{% endblock %}
+
+{% block content %}
+<section id="summary">
+    <h2>Drink Title</h2>
+    <article>
+        <img src="{% static "cocktails/images/drink.jpg" %}" alt="Drink name">
+        <address>By Amanda Mitzian</address>
+        <div>Last update on <time datetime="">July 10th</time></div>
+    </article>
+</section>
+
+<main>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa unde asperiores laboriosam dolorem autem quos
+        atque dolor, necessitatibus, saepe molestias ipsam culpa minus veritatis alias molestiae esse vel iure nam.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa unde asperiores laboriosam dolorem autem quos
+        atque
+        dolor, necessitatibus, saepe molestias ipsam culpa minus veritatis alias molestiae esse vel iure nam.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa unde asperiores laboriosam dolorem autem quos
+        atque
+        dolor, necessitatibus, saepe molestias ipsam culpa minus veritatis alias molestiae esse vel iure nam.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa unde asperiores laboriosam dolorem autem quos
+        atque
+        dolor, necessitatibus, saepe molestias ipsam culpa minus veritatis alias molestiae esse vel iure nam.</p>
+</main>
+{% endblock %}

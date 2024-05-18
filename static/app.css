@@ -42,7 +42,7 @@ h3 {
     color: #cf79f1;
 }
 
-#main-navigation h1 a:hover,
-#main-navigation h1 a:active {
-    color: white;
+#main-navigation img {
+    max-width: 18.75rem;
+    height   : auto;
 }
