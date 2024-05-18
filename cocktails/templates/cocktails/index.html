@@ -1,9 +1,36 @@
 {% extends "base.html" %}
+{% load static %}
 
-{% block title %}
-Mix It Up - API
+{% block title %} Mix It Up - API {% endblock %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static "cocktails/drink.css" %}" />
+<link rel="stylesheet" href="{% static "cocktails/index.css" %}" />
 {% endblock %}
 
 {% block content %}
-<h1>Welcome to Mix It Up API</h1>
+
+<section id="welcome">
+	<header>
+		<img src="{% static "cocktails/images/logo.png" %}" alt="Indie Interactive - Owner of this API" />
+		<h2>Indie Interactive</h2>
+	</header>
+	<p>Hey, We are Indie Interactive and this is our cocktails API!</p>
+</section>
+
+<section id="latest-drinks">
+	<h2>Latest Drinks</h2>
+	<ul>
+		{% include "cocktails/includes/drink.html" %}
+		{% include "cocktails/includes/drink.html" %}
+
+	</ul>
+</section>
+
+<section>
+	<h2>What We Do</h2>
+	<p>We love programming and design...</p>
+	<p>Our goal is to keep on growing as a company while helping you do the same!</p>
+</section>
+
 {% endblock %}

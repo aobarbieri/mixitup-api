@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Mix It Up - All Drinks
+{% endblock %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static "cocktails/drink.css" %}" />
+<link rel="stylesheet" href="{% static "cocktails/all-drinks.css" %}" />
+{% endblock %}
+
+{% block content %}
+<section id="all-drinks">
+    <h2>Drinks</h2>
+    <ul>
+        {% include "cocktails/includes/drink.html" %}
+        {% include "cocktails/includes/drink.html" %}
+    </ul>
+</section>
+{% endblock %}

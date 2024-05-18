@@ -9,8 +9,8 @@ def index(req):
     return render(req, 'cocktails/index.html')
 
 
-def drinks(request):
-    pass
+def drinks(req):
+    return render(req, 'cocktails/all-drinks.html')
 
 
 def drink_details(request):
