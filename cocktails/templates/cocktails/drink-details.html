@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-Mix It Up - Drink Details
+{{ drink.title }} - Drink Details
 {% endblock %}
 
 {% block css_files %}
@@ -11,25 +11,17 @@ Mix It Up - Drink Details
 
 {% block content %}
 <section id="summary">
-    <h2>Drink Title</h2>
+    <h2>{{ drink.title }}</h2>
     <article>
-        <img src="{% static "cocktails/images/drink.jpg" %}" alt="Drink name">
-        <address>By Amanda Mitzian</address>
-        <div>Last update on <time datetime="">July 10th</time></div>
+        <img src="{% static "cocktails/images/"|add:drink.image %}" alt="{{ drink.title }}">
+        <address>{{ drink.author }}</address>
+        <div>Last update on <time datetime="">{{ drink.date|date:"D d M Y" }}</time></div>
     </article>
 </section>
 
 <main>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa unde asperiores laboriosam dolorem autem quos
-        atque dolor, necessitatibus, saepe molestias ipsam culpa minus veritatis alias molestiae esse vel iure nam.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa unde asperiores laboriosam dolorem autem quos
-        atque
-        dolor, necessitatibus, saepe molestias ipsam culpa minus veritatis alias molestiae esse vel iure nam.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa unde asperiores laboriosam dolorem autem quos
-        atque
-        dolor, necessitatibus, saepe molestias ipsam culpa minus veritatis alias molestiae esse vel iure nam.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa unde asperiores laboriosam dolorem autem quos
-        atque
-        dolor, necessitatibus, saepe molestias ipsam culpa minus veritatis alias molestiae esse vel iure nam.</p>
+    <p> 
+        {{ drink.content|linebreaks }}
+    </p>
 </main>
 {% endblock %}

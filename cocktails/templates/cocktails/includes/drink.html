@@ -2,11 +2,11 @@
 
 <li>
     <article class="drink">
-        <a href="{% url "drink-details-page" "tbd-cup" %}">
-            <img src="{% static 'cocktails/images/drink.jpg' %}" alt="Drink name" />
+        <a href="{% url "drink-details-page" post.slug %}">
+            <img src="{% static 'cocktails/images/'|add:post.image %}" alt="Drink name" />
             <div class="drink__content">
-                <h3>Drink Name</h3>
-                <p>Details of this drink</p>
+                <h3>{{ post.title }}</h3>
+                <p>{{ post.excerpt }}</p>
             </div>
         </a>
     </article>
