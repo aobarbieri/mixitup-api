@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-{{ drink.title }} - Drink Details
+{{ drink.name }} - Drink Details
 {% endblock %}
 
 {% block css_files %}
@@ -11,7 +11,7 @@
 
 {% block content %}
 <section id="summary">
-    <h2>{{ drink.title }}</h2>
+    <h2>{{ drink.name }}</h2>
     <article>
         <img src="{% static "cocktails/images/"|add:drink.image %}" alt="{{ drink.title }}">
         <address>{{ drink.author }}</address>

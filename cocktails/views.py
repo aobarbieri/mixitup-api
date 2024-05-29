@@ -5,21 +5,10 @@ from django.shortcuts import render
 
 all_drinks = [
     {
-        "slug": "orig-marguerita",
-        "image": "drink.jpg",
-        "author": "Amanda Mitzian",
-        "date": date(2021, 7, 21),
-        "title": "Original Marguerita",
-        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa unde asperiores laboriosam dolorem autem quos atque dolor, necessitatibus, saepe molestias ipsam culpa minus veritatis alias molestiae esse vel iure nam.",
-        "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa unde asperiores laboriosam dolorem autem quos atque dolor, necessitatibus, saepe molestias ipsam culpa minus veritatis alias molestiae esse vel iure nam."
-    },
-    {
         "slug": "trad-marguerita",
         "image": "drink.jpg",
-        "author": "Amanda Mitzian",
-        "date": date(2021, 11, 10),
-        "title": "Tradicional Marguerita",
-        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa unde asperiores laboriosam dolorem autem quos atque dolor, necessitatibus, saepe molestias ipsam culpa minus veritatis alias molestiae esse vel iure nam.",
+        "name": "Tradicional Marguerita",
+        "numbOfIng": 2,
         "content": """
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa unde asperiores laboriosam dolorem autem 
             quos atque dolor, necessitatibus, saepe molestias ipsam culpa minus veritatis alias molestiae esse vel iure nam. 
