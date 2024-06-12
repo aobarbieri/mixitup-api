@@ -17,7 +17,7 @@
 			<img src="{% static "cocktails/images/logo.png" %}" alt="Indie Interactive logo">
 		</a>
 		<nav>
-			<a href="{% url "drinks-page" %}">All Drinks</a>
+			{% comment %} <a href="{% url "drinks-page" %}">All Drinks</a> {% endcomment %}
 		</nav>
 	</header>
 	{% block content %}{% endblock %}

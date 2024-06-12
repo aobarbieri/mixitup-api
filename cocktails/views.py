@@ -1,45 +1,34 @@
-from django.http import HttpResponse, HttpResponseNotFound
-from datetime import date
+from django.shortcuts import render, get_object_or_404
 
-from django.shortcuts import render
-
-all_drinks = [
-    {
-        "slug": "trad-marguerita",
-        "image": "drink.jpg",
-        "name": "Tradicional Marguerita",
-        "numbOfIng": 2,
-        "content": """
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa unde asperiores laboriosam dolorem autem 
-            quos atque dolor, necessitatibus, saepe molestias ipsam culpa minus veritatis alias molestiae esse vel iure nam. 
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa unde asperiores laboriosam dolorem autem quos atque dolor, 
-            necessitatibus, saepe molestias ipsam culpa minus veritatis alias molestiae esse vel iure nam."""
-    }
-] # type: ignore
-
-def get_date(post):
-    return post['date']
+from .models import Drink
 
 # Create your views here.
-# Views are either a function or a class
 
 
 def index(req):
-    sorted_drinks = sorted(all_drinks, key=get_date)
-    latest_drinks = sorted_drinks[-2:]
+    drinks = Drink.objects.all().order_by('date')
+    # latest_drinks = drinks[-1:]
+
     return render(req, 'cocktails/index.html', {
-        "posts": latest_drinks
+        "drinks": drinks
     })
 
 
 def drinks(req):
+    drinks = Drink.objects.all()
+
     return render(req, 'cocktails/all-drinks.html', {
-        "post": all_drinks
+        "drinks": drinks
     })
 
 
 def drink_details(req, slug):
-    identified_drink = next(post for post in all_drinks if post['slug'] == slug)
+    drink = get_object_or_404(Drink, slug=slug)
+
     return render(req, 'cocktails/drink-details.html', {
-        "drink": identified_drink
+        "name": drink.name,
+        "date": drink.date,
+        "strength": drink.strength,
+        "flavors": drink.flavors,
+        "ingredients": drink.ingredients
     })

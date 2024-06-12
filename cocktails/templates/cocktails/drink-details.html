@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-{{ drink.name }} - Drink Details
+{{ name }} - Drink Details
 {% endblock %}
 
 {% block css_files %}
@@ -11,17 +11,22 @@
 
 {% block content %}
 <section id="summary">
-    <h2>{{ drink.name }}</h2>
+    <h2>{{ name }}</h2>
     <article>
-        <img src="{% static "cocktails/images/"|add:drink.image %}" alt="{{ drink.title }}">
-        <address>{{ drink.author }}</address>
-        <div>Last update on <time datetime="">{{ drink.date|date:"D d M Y" }}</time></div>
+        {% comment %} <img src="{% static "cocktails/images/"|add:drink.image %}" alt="{{ drink.title }}"> {% endcomment %}
+        <address>{{ strength }}</address>
+        <address>{{ flavors }}</address>
+        {% comment %} {% for flavor in flavors %}
+        {% endfor %} {% endcomment %}
+        <div>Last update on <time datetime="">{{ date|date:"D d M Y" }}</time></div>
     </article>
 </section>
 
 <main>
     <p> 
-        {{ drink.content|linebreaks }}
+        {{ ingredients|linebreaks }}
     </p>
+    {% comment %} {% for ingredient in ingredients %}
+    {% endfor %} {% endcomment %}
 </main>
 {% endblock %}
