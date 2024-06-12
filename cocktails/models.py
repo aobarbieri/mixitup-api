@@ -12,12 +12,18 @@ from django.core.validators import MinLengthValidator
    
 class Strength(models.Model):
     name = models.CharField(max_length=20)
+    def __str__(self):
+        return self.name
     
 class Flavor(models.Model):
     name = models.CharField(max_length=20)
+    def __str__(self):
+        return self.name
 
 class Ingredient(models.Model):
     name = models.CharField(max_length=30)
+    def __str__(self):
+        return self.name
 
 class Drink(models.Model):
     name = models.CharField(max_length=30)
